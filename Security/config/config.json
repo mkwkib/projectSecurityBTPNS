@@ -1,0 +1,41 @@
+{
+  "development": {
+    "username": "sa",
+    "password": "P@ssw0rd",
+    "database": "demoFinal-dev",
+    "host": "H0001N593605D2",
+    "port": 1433,
+    "dialect": "mssql",
+    "dialectOptions": {
+      "driver": "SQL Server Native Client 11.0",
+      "trustedConnection": "true"
+    },
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "sa",
+    "password": "P@ssw0rd",
+    "database": "demoFinal-test",
+    "host": "H0001N593605D2",
+    "port": 1433,
+    "dialect": "mssql",
+    "dialectOptions": {
+      "driver": "SQL Server Native Client 11.0",
+      "trustedConnection": "true"
+    },
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "sa",
+    "password": "P@ssw0rd",
+    "database": "demoFinal-prod",
+    "host": "H0001N593605D2",
+    "port": 1433,
+    "dialect": "mssql",
+    "dialectOptions": {
+      "driver": "SQL Server Native Client 11.0",
+      "trustedConnection": "true"
+    },
+    "operatorsAliases": false
+  }
+}
