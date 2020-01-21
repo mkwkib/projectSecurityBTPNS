@@ -1,13 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var jwt = require('jsonwebtoken')
-var axios = require('axios').default
+var axios = require('axios')
 
 /* GET users listing. */
-const App = express()
 
-
-App.use(function (req,res,next) {
+async function addToken(req,res,next) {
   try {
     let token = req.headers.authorization;
     jwt.verify(token, process.env.SECRET, (err) => {
@@ -23,13 +21,22 @@ App.use(function (req,res,next) {
     return next(err)
   }
       next()
-})
+}
 
-router.get('/login', function(req, res, next) {
-  axios.get('localhost:3001/login')
-    .then(function (res, req, next) {
 
-    })
+router.post('/login', function(req, res, next) {
+  if(req.body.username && req.body.password){
+    axios.post('http://localhost:3001/users/gettoken', req.body)
+      .then(function (result) {
+        res.status(200).json({
+          status: "Berhasil",
+          message: "Anda Berhasil Mendapatkan Token"
+        })
+      })
+      .catch(function (err) {
+        res.status(400).json(err)
+      })
+  } else res.sendStatus(404)
 });
 
 module.exports = router;

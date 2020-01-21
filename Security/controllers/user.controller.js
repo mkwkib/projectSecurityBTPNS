@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt')
 const saltRounds = 10
 const {roles, users} = require('../models')
+const jwt = require('jsonwebtoken')
 
 
 
@@ -57,4 +58,35 @@ module.exports = {
         }
       }
     )},
+  gettoken: function (req, res) {
+    console.log("================================", req.body)
+    users.findOne({
+      where:{
+        username: req.body.username
+      }
+    })
+      .then(function (users) {
+        if(users){
+          password = req.body.password
+          bcrypt.compare(password, users.password, function (err, result) {
+            var token = jwt.sign({
+              id: users.id,
+              role_id: users.role_id
+            }, process.env.SECRET);
+            res.status(200).json({
+              message: "Anda Telah Mendapatkan Token",
+              token: token
+            })
+          })
+        }else {
+          res.status(400).json({
+            status: "Tidak Dapat Masuk!",
+            messages: "Email atau Password Salah"
+          })
+        }
+
+      })
+
+  }
+
 }

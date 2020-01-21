@@ -3,12 +3,19 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require('cors')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var rolesRouter = require('./routes/roles');
 
 var app = express();
+
+app.use(function (req,res, next) {
+  res.header('Access-Control-Allow-Origin','*')
+  res.header('Access-Control-Allow-Headers','*')
+  next()
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -39,5 +46,14 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.use(cors())
+// app.use(cors({
+//   origin: [
+//     'http://localhost:3000',
+//   ],
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   allowedHeaders: "*"//['Content-Type', 'Authorization']
+// }))
 
 module.exports = app;

@@ -11,5 +11,8 @@ router.get('/', function (req, res, next) {
 router.post('/register', function(req, res, next) {
   userController.register(req, res)
 });
+router.post('/gettoken', function (req,res,next) {
+  userController.gettoken(req,res)
+})
 
 module.exports = router;
