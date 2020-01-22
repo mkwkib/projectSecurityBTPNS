@@ -12,6 +12,7 @@ module.exports = {
         let dataUser = users.map((data) => {
           return {
             username: data.username,
+            nik: data.nik,
             name: data.name,
             role: data.role_id,
           }
@@ -30,19 +31,21 @@ module.exports = {
   },
 
   register: function (req, res) {
-    var password =req.body.password
+    var password = req.body.password
     bcrypt.hash(password, saltRounds, function (err, hashPassword) {
-        if (!err){
+        if (!err) {
           users.create({
             username: req.body.username,
             role_id: req.body.role_id,
+            nik: req.body.nik,
             name: req.body.name,
             password: hashPassword
           })
             .then(function (user) {
               res.status(200).json({
                 status: "DATA TELAH DIBUAT",
-                data:[{
+                data: [{
+                  'NIK': user.nik,
                   'username': user.username,
                   'name': user.name,
                   'role_id': user.role_id
@@ -57,36 +60,48 @@ module.exports = {
             })
         }
       }
-    )},
-  gettoken: function (req, res) {
-    console.log("================================", req.body)
-    users.findOne({
-      where:{
-        username: req.body.username
-      }
-    })
-      .then(function (users) {
-        if(users){
-          password = req.body.password
-          bcrypt.compare(password, users.password, function (err, result) {
-            var token = jwt.sign({
-              id: users.id,
-              role_id: users.role_id
-            }, process.env.SECRET);
-            res.status(200).json({
-              message: "Anda Telah Mendapatkan Token",
-              token: token
-            })
-          })
-        }else {
-          res.status(400).json({
-            status: "Tidak Dapat Masuk!",
-            messages: "Email atau Password Salah"
-          })
+    )
+  },
+
+  gettoken: function (req, res, next) {
+    try {
+      users.findOne({
+        where: {
+          username: req.body.username
         }
-
       })
-
+        .then(function (users) {
+          if (users) {
+            password = req.body.password
+            bcrypt.compare(password, users.password, function (err, result) {
+              if (result) {
+                var token = jwt.sign({
+                  id: users.id,
+                  role_id: users.role_id
+                }, process.env.ADMIN);
+                res.status(200).json({
+                  message: "Anda Telah Mendapatkan Token",
+                  token: token
+                })
+              } else {
+                res.status(400).json({
+                  status: "Tidak Dapat Masuk!",
+                  messages: "Email atau Password Salah"
+                })
+              }
+            })
+          }else {
+            res.status(400).json({
+              status: "Tidak Dapat Masuk!",
+              messages: "Password Salah"
+            })
+          }
+        })
+    } catch (err) {
+      return res.status(400).json({
+        status: "Tidak Dapat Masuk!",
+        messages: "Email Tidak Terdaftar"
+      })
+    }
   }
-
 }

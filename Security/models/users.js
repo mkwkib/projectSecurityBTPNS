@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         validate: {
           is: {
-            args: ["^[a-z]+$", 'i'],
+            args:["^[a-z ]+$",'i'],
             msg: "Nama Harus Diisi Dengan Huruf"
           }
         }
@@ -38,6 +38,16 @@ module.exports = (sequelize, DataTypes) => {
             msg: "Role ID Harus Diisi Dengan Angka"
           }
         }
+      },
+
+      nik:{
+       type: DataTypes.STRING,
+       validate:{
+         isNumeric:{
+           args: true,
+           msg: "NIK Harus Diisi Dengan Angka"
+         }
+       }
       }
     },
     {});
