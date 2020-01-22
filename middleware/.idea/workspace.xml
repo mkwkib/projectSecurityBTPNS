@@ -5,12 +5,6 @@
       <change beforePath="$PROJECT_DIR$/../Security/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Security/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Security/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Security/controllers/user.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Security/models/roles.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Security/models/roles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cors/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cors/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +61,7 @@
       <updated>1579578728199</updated>
       <workItem from="1579578733411" duration="2083000" />
       <workItem from="1579581284821" duration="2551000" />
-      <workItem from="1579588819883" duration="35985000" />
+      <workItem from="1579588819883" duration="36697000" />
     </task>
     <task id="LOCAL-00001" summary="menambah fungsi get token untuk login di middleware">
       <created>1579598969652</created>
