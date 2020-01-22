@@ -2,7 +2,9 @@ var express = require('express');
 var router = express.Router();
 var jwt = require('jsonwebtoken')
 var axios = require('axios')
-
+var env = require('dotenv')
+env.config()
+var loginAPI = process.env.SERVICE_SECURITY
 /* GET users listing. */
 
 async function addToken(req,res,next) {
@@ -24,19 +26,47 @@ async function addToken(req,res,next) {
 }
 
 
+//=================================SECURITY========================================
+//GET TOKEN SECURITY
 router.post('/login', function(req, res, next) {
   if(req.body.username && req.body.password){
-    axios.post('http://localhost:3001/users/gettoken', req.body)
+    axios.post(loginAPI+'users/gettoken', req.body)
+      .then(function (result) {
+        res.status(200).json(result.data)
+      })
+      .catch(function (err) {
+        res.status(400).json({
+          status: "400 - Bad Request",
+          message: "Username atau Password Salah"
+        })
+      })
+  } else res.status(400).json({
+    status: "400 - Bad Request",
+    message: "Tidak Dapat Menghubungi Server"
+  })
+});
+//REGISTER USER
+router.post('/register', function(req, res, next) {
+  if(req.body.username && req.body.password && req.body.role_id && req.body.name){
+    axios.post(loginAPI+'users/register', req.body)
       .then(function (result) {
         res.status(200).json({
-          status: "Berhasil",
-          message: "Anda Berhasil Mendapatkan Token"
+          status: "200 - OK",
+          message: "Data Berhasil Ditambahkan"
         })
       })
       .catch(function (err) {
-        res.status(400).json(err)
+        res.status(400).json({
+          status: "400 - Bad Request",
+          message: "Username Sudah Digunakan"
+        })
       })
-  } else res.sendStatus(404)
+  } else res.status(400).json({
+    status: "400 - Bad Request",
+    message: "Tidak Dapat Menghubungi Server"
+  })
 });
+
+//=================================CUSTOMER========================================
 
 module.exports = router;
