@@ -8,12 +8,9 @@ var customerAPI = process.env.SERVICE_CUSTOMER;
 //-----------------------------------------INPUT CUSTOMER-------------------------------
 router.post('/add', function (req, res, next) {
   if(req.body.name && req.body.email && req.body.phone && req.body.address && req.body.customer_nik){
-    axios.post(customerAPI+'customers', req.body)
+    axios.post(customerAPI+'customer', req.body)
       .then(function (result) {
-        res.status(200).json({
-          status: "200 - OK",
-          message: result.data
-        })
+        res.status(200).json(result.data)
       })
       .catch(function () {
         res.status(400).json({

@@ -40,7 +40,7 @@ async function authCO(req, res, next) {
   next();
 }
 //-----------------------------------------GET TOKEN-------------------------------
-router.post('/login',authAdmin, function(req, res, next) {
+router.post('/login', function(req, res, next) {
   if(req.body.username && req.body.password){
     axios.post(loginAPI+'users/gettoken', req.body)
       .then(function (result) {
@@ -58,7 +58,7 @@ router.post('/login',authAdmin, function(req, res, next) {
   })
 });
 //-----------------------------------------REGISTER USER-------------------------------
-router.post('/register', function(req, res, next) {
+router.post('/register',authAdmin, function(req, res, next) {
   if(req.body.username && req.body.password && req.body.role_id && req.body.name){
     axios.post(loginAPI+'users/register', req.body)
       .then(function (result) {

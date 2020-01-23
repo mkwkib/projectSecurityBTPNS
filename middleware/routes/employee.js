@@ -4,10 +4,45 @@ var axios = require('axios');
 var env = require('dotenv');
 env.config();
 var employeeAPI = process.env.SERVICE_EMPLOYEE;
+var jwt = require('jsonwebtoken')
+
+async function authAdmin(req, res, next) {
+  try {
+    let token = req.headers.authorization;
+    jwt.verify(token, process.env.ADMIN, (err) => {
+      if (err) {
+        console.log(token)
+        res.status(400).json({
+          status: 'Invalid Token',
+          message: 'Token Salah atau Token Telah Berubah'
+        })
+      }
+    })
+  } catch (err) {
+    return next(err)
+  }
+  next();
+}
+async function authCO(req, res, next) {
+  try {
+    let token = req.headers.authorization;
+    jwt.verify(token, process.env.CO, (err) => {
+      if (err) {
+        res.status(400).json({
+          status: 'Invalid Token',
+          message: 'Token Salah atau Token Telah Berubah'
+        })
+      }
+    })
+  } catch (err) {
+    return next(err)
+  }
+  next();
+}
 
 module.exports =router;
 //-------------------------------GET ALL EMPLOYEE-------------------------------
-router.get('/all',function (req, res, next) {
+router.get('/all',authAdmin,function (req, res, next) {
   axios.get(employeeAPI+'employee/all')
     .then(function (result) {
       res.status(200).json(result.data)
@@ -20,7 +55,7 @@ router.get('/all',function (req, res, next) {
     })
 });
 //-------------------------------REGISTER EMPLOYEE-------------------------------
-router.post('/register', function(req, res, next) {
+router.post('/register',authAdmin, function(req, res, next) {
   if(req.body.nik && req.body.name && req.body.email && req.body.address){
     axios.post(employeeAPI+'employee/register', req.body)
       .then(function (result) {

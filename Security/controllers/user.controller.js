@@ -1,7 +1,7 @@
-const bcrypt = require('bcrypt')
-const saltRounds = 10
-const {roles, users} = require('../models')
-const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+const {roles, users} = require('../models');
+const jwt = require('jsonwebtoken');
 
 
 
@@ -75,12 +75,16 @@ module.exports = {
             password = req.body.password
             bcrypt.compare(password, users.password, function (err, result) {
               if (result) {
+                let secret = process.env.ADMIN
+                if(users.role_id==2)
+                {secret = process.env.CO}
                 var token = jwt.sign({
                   id: users.id,
-                  role_id: users.role_id
-                }, process.env.ADMIN);
+                  role_id: users.role_id,
+                  secret : secret.trim()
+                }, secret.trim(),{ expiresIn: '1h' });
                 res.status(200).json({
-                  message: "Anda Telah Mendapatkan Token",
+                  message: "sukses",
                   token: token
                 })
               } else {

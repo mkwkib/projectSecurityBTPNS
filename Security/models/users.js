@@ -46,6 +46,17 @@ module.exports = (sequelize, DataTypes) => {
          isNumeric:{
            args: true,
            msg: "NIK Harus Diisi Dengan Angka"
+         },
+         isUniqueNIK: function (value, next) {
+           users.findOne({
+             where: {nik: value},
+             attributes: ['nik']
+           })
+             .done(function (error) {
+               if (error)
+                 return next('NIK Sudah Digunakan');
+               next();
+             })
          }
        }
       }

@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         validate: {
           is: {
-            args: ["^[a-z]+$", 'i'],
+            args: ["^[a-z ]+$", 'i'],
             msg: "Nama Harus Diisi Dengan Huruf"
           }
         }},

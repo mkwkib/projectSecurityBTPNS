@@ -48,7 +48,7 @@ router.get('/all', function (req, res, next) {
       })
     })
 });
-//-----------------------------------------GET REPORT POSTED BY ALL-------------------------------
+//-----------------------------------------GET REPORT POSTED BY CO ALL-------------------------------
 router.get('/by_co/all',function (req, res, next) {
   axios.get(reportAPI+'v0.0.1/report/postby')
     .then(function (result) {
@@ -61,7 +61,7 @@ router.get('/by_co/all',function (req, res, next) {
       })
     })
 });
-//-----------------------------------------GET REPORT POSTED BY CO-------------------------------\
+//-----------------------------------------GET REPORT POSTED BY CO-------------------------------
 router.get('/by_co/:coNumber',function (req, res, next) {
   axios.get(reportAPI+'v0.0.1/report/postby/'+req.params.coNumber)
     .then(function (result) {

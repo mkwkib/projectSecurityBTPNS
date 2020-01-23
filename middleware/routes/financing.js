@@ -19,7 +19,7 @@ router.get('/account/all',function (req, res, next) {
 });
 //-----------------------------------------ADD LIST ACCOUNT-------------------------------
 router.post('/account/input', function (req, res, next) {
-  if(req.body.accountNo && req.body.customerId && req.body.plafon && req.body.disbursementDate){
+  if(req.body.customerId && req.body.plafon && req.body.disbursementDate){
     axios.post(financingAPI+'financingAccount/registration', req.body)
       .then(function (result) {
         res.status(200).json({
@@ -38,6 +38,19 @@ router.post('/account/input', function (req, res, next) {
     status: "400 - Bad Request",
     message: "Tidak Dapat Menghubungi Server"
   })
+});
+//-----------------------------GET Financing Account By Id---------------------------------
+router.get('/account/:accountNumber',function (req, res, next) {
+  axios.get(financingAPI+'financingAccount/'+req.params.accountNumber)
+    .then(function (result) {
+      res.status(200).json(result.data)
+    })
+    .catch(function () {
+      res.status(400).json({
+        status: "400 - Bad Request",
+        message: "Data yang Anda Masukkan Salah"
+      })
+    })
 });
 module.exports = router;
 
