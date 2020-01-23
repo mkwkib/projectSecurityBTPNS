@@ -11,12 +11,7 @@
       <change beforePath="$PROJECT_DIR$/../Security/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Security/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Security/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Security/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Security/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Security/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/financing.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/financing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/reports.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/reports.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +69,7 @@
       <workItem from="1579578733411" duration="2083000" />
       <workItem from="1579581284821" duration="2551000" />
       <workItem from="1579588819883" duration="53363000" />
+      <workItem from="1579766752593" duration="243000" />
     </task>
     <task id="LOCAL-00001" summary="menambah fungsi get token untuk login di middleware">
       <created>1579598969652</created>
@@ -89,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579688232157</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="menambah routes customers dan employee">
+      <created>1579766818045</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1579766818045</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,13 +101,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="menambah fungsi get token untuk login di middleware" />
     <MESSAGE value="menambah .env" />
-    <option name="LAST_COMMIT_MESSAGE" value="menambah .env" />
+    <MESSAGE value="menambah routes customers dan employee" />
+    <option name="LAST_COMMIT_MESSAGE" value="menambah routes customers dan employee" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1579688229947">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1579767101504">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1579688229947" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1579767101504" />
     <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1579766654031">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -121,9 +125,9 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1579766654029" />
-    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1579688239578">
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1579766825950">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1579688239578" />
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1579766825950" />
   </component>
 </project>
