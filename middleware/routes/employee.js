@@ -11,26 +11,9 @@ async function authAdmin(req, res, next) {
     let token = req.headers.authorization;
     jwt.verify(token, process.env.ADMIN, (err) => {
       if (err) {
-        console.log(token)
         res.status(400).json({
           status: 'Invalid Token',
-          message: 'Token Salah atau Token Telah Berubah'
-        })
-      }
-    })
-  } catch (err) {
-    return next(err)
-  }
-  next();
-}
-async function authCO(req, res, next) {
-  try {
-    let token = req.headers.authorization;
-    jwt.verify(token, process.env.CO, (err) => {
-      if (err) {
-        res.status(400).json({
-          status: 'Invalid Token',
-          message: 'Token Salah atau Token Telah Berubah'
+          message: 'Token Salah atau Telah Kadaluarsa'
         })
       }
     })
@@ -40,10 +23,9 @@ async function authCO(req, res, next) {
   next();
 }
 
-module.exports =router;
 //-------------------------------GET ALL EMPLOYEE-------------------------------
 router.get('/all',authAdmin,function (req, res, next) {
-  axios.get(employeeAPI+'employee/all')
+  axios.get(employeeAPI+'employee/')
     .then(function (result) {
       res.status(200).json(result.data)
     })
@@ -75,3 +57,35 @@ router.post('/register',authAdmin, function(req, res, next) {
     message: "Tidak Dapat Menghubungi Server"
   })
 });
+//-------------------------------GET EMPLOYEE BY NIK-------------------------------
+router.get('/:nik',authAdmin,function (req, res, next) {
+  axios.get(employeeAPI+'employee/'+req.params.nik)
+    .then(function (result) {
+      res.status(200).json(result.data)
+    })
+    .catch(function () {
+      res.status(400).json({
+        status: "400 - Bad Request",
+        message: "DATA TIDAK DITEMUKAN"
+      })
+    })
+});
+//-----------------------------------------UPDATE CUSTOMER BY NIK-------------------------------
+router.put('/edit/:nik', function (req, res, next) {
+  if(req.body.name && req.body.email && req.body.address){
+    axios.put(employeeAPI+'/employee/'+req.params.nik, req.body)
+      .then(function (result) {
+        res.status(200).json(result.data)
+      })
+      .catch(function () {
+        res.status(400).json({
+          status: "400 - Bad Request",
+          message: "Data yang Anda Masukkan Salah"
+        })
+      })
+  } else res.status(400).json({
+    status: "400 - Bad Request",
+    message: "Tidak Dapat Menghubungi Server"
+  })
+});
+module.exports =router;

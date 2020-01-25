@@ -5,9 +5,40 @@ var env = require('dotenv');
 env.config();
 var reportAPI = process.env.SERVICE_REPORT;
 var financingAPI = process.env.SERVICE_FINANCING;
+var jwt = require('jsonwebtoken');
 
-
-
+async function authAdmin(req, res, next) {
+  try {
+    let token = req.headers.authorization;
+    jwt.verify(token, process.env.ADMIN, (err) => {
+      if (err) {
+        res.status(400).json({
+          status: 'Invalid Token',
+          message: 'Token Salah atau Telah Kadaluarsa'
+        })
+      }
+    })
+  } catch (err) {
+    return next(err)
+  }
+  next();
+}
+async function authCO(req, res, next) {
+  try {
+    let token = req.headers.authorization;
+    jwt.verify(token, process.env.CO, (err) => {
+      if (err) {
+        res.status(400).json({
+          status: 'Invalid Token',
+          message: 'Token Salah atau Telah Kadaluarsa'
+        })
+      }
+    })
+  } catch (err) {
+    return next(err)
+  }
+  next();
+}
 //-----------------------------------------INPUT REPORT-------------------------------
 router.post('/report/input', function (req, res, next) {
   if(
@@ -34,7 +65,7 @@ router.post('/report/input', function (req, res, next) {
   })
 });
 //-----------------------------------------GET REPORT ALL-------------------------------
-router.get('/all', function (req, res, next) {
+router.get('/all',authAdmin, function (req, res, next) {
   page = 1;
   if (req.query.page) {page = req.query.page}
   axios.get(reportAPI+'v0.0.1/report/all?page='+page)
@@ -89,16 +120,14 @@ router.get('/by_account/:accountNumber',function (req, res, next) {
 });
 //-----------------------------------------POST REPORT GET BY FINANCING-------------------------------
 router.post('/financing/add', function (req,res, next) {
-  if(req.body.accountNo && req.body.customerId && req.body.plafon && req.body.disbursementDate) {
+  if(req.body.customerId && req.body.plafon && req.body.disbursementDate) {
     axios.post(financingAPI + 'financingAccont/registration')
       .then(function (result) {
         res.status(200).json({
           status: "200 - OK",
           message: result.data
         });
-        axios.get(financingAPI + 'financingAccount/list')
-          .then(function (result) {
-            if (result.status(200) && result.data.trxId && result.data.accountNo && result.data.accountName && result.data.installmentNo &&
+        if (result.status(200) && result.data.trxId && result.data.accountNo && result.data.accountName && result.data.installmentNo &&
               result.data.plafon && result.data.postedAmount && result.data.postedDate && result.data.postedBy && result.data.ket) {
               axios.post(reportAPI + 'v0.0.1/report/insert', result.data)
                 .then(function (dataresult) {
@@ -114,12 +143,6 @@ router.post('/financing/add', function (req,res, next) {
               status: "400 - Bad Request",
               message: "DATA TIDAK DITEMUKAN"
             });
-          }).catch(function () {
-          res.status(400).json({
-            status: "400 - Bad Request",
-            message: "DATA TIDAK DAPAT DIMASUKKAN"
-          })
-        });
       }).catch(function () {
       res.status(400).json({
         status: "400 - Bad Request",
@@ -128,5 +151,33 @@ router.post('/financing/add', function (req,res, next) {
 
     });
   }
+});
+//-----------------------------------------GET NASABAH BY CO-------------------------------
+router.get('/customers/:accountNumber',function (req, res, next) {
+  axios.get(reportAPI+'v0.0.1/report/customers/'+req.params.accountNumber)
+    .then(function (result) {
+      res.status(200).json(result.data)
+    })
+    .catch(function () {
+      res.status(400).json({
+        status: "400 - Bad Request",
+        message: "DATA TIDAK DITEMUKAN"
+      })
+    })
+});
+//-----------------------------------------GET NASABAH BY KET-------------------------------
+router.get('/:ket',function (req, res, next) {
+  page1 = 1;
+  if (req.query.page) {req.query.page}
+  axios.get(reportAPI+'v0.0.1/report/ket/'+req.params.ket+'?page='+req.query.page)
+    .then(function (result) {
+      res.status(200).json(result.data)
+    })
+    .catch(function () {
+      res.status(400).json({
+        status: "400 - Bad Request",
+        message: "DATA TIDAK DITEMUKAN"
+      })
+    })
 });
 module.exports=router;

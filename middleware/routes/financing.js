@@ -4,6 +4,25 @@ var axios = require('axios');
 var env = require('dotenv');
 env.config();
 var financingAPI = process.env.SERVICE_FINANCING;
+var jwt = require('jsonwebtoken')
+
+async function authCO(req, res, next) {
+  try {
+    let token = req.headers.authorization;
+    jwt.verify(token, process.env.CO, (err) => {
+      if (err) {
+        res.status(400).json({
+          status: 'Invalid Token',
+          message: 'Token Salah atau Telah Kadaluarsa'
+        })
+      }
+    })
+  } catch (err) {
+    return next(err)
+  }
+  next();
+}
+
 //-----------------------------------------GET LIST ACCOUNT ALL-------------------------------
 router.get('/account/all',function (req, res, next) {
   axios.get(financingAPI+'financingAccount/list')
@@ -18,7 +37,7 @@ router.get('/account/all',function (req, res, next) {
     })
 });
 //-----------------------------------------ADD LIST ACCOUNT-------------------------------
-router.post('/account/input', function (req, res, next) {
+router.post('/account/input',authCO, function (req, res, next) {
   if(req.body.customerId && req.body.plafon && req.body.disbursementDate){
     axios.post(financingAPI+'financingAccount/registration', req.body)
       .then(function (result) {
@@ -52,5 +71,7 @@ router.get('/account/:accountNumber',function (req, res, next) {
       })
     })
 });
+//-----------------------------PUT Financing Payment by trxId---------------------------------
+
 module.exports = router;
 

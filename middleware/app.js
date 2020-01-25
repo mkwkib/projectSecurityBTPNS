@@ -3,9 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var dotenv = require('dotenv')
-dotenv.config()
-var cors = require('cors')
+var dotenv = require('dotenv');
+dotenv.config();
+var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -13,6 +13,7 @@ var reportsRouter = require('./routes/reports');
 var financingRouter = require('./routes/financing');
 var customersRouter = require('./routes/customers');
 var employeeRouter = require('./routes/employee');
+var finReportRouter = require('./routes/financing-report');
 
 
 var app = express();
@@ -24,6 +25,7 @@ app.set('view engine', 'pug');
 app.use(function (req,res, next) {
   res.header('Access-Control-Allow-Origin','*')
   res.header('Access-Control-Allow-Headers','*')
+  res.header('Access-Control-Allow-Methods', '*')
   next()
 })
 
@@ -39,6 +41,7 @@ app.use('/reports', reportsRouter);
 app.use('/financing', financingRouter);
 app.use('/customers', customersRouter);
 app.use('/employee', employeeRouter);
+app.use('/financing-report', finReportRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -55,6 +58,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 app.use(cors())
 
 

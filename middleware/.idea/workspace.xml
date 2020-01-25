@@ -4,14 +4,12 @@
     <list default="true" id="3564fa18-52de-411d-9ede-60ee9fc0542c" name="Default Changelist" comment="menambah routes customers dan employee">
       <change beforePath="$PROJECT_DIR$/../Security/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Security/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Security/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Security/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Security/migrations/20200119021719-create-users.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Security/migrations/20200119021719-create-users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Security/migrations/20200119021801-create-roles.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Security/migrations/20200119021801-create-roles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Security/models/roles.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Security/models/roles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Security/models/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Security/models/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Security/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Security/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Security/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Security/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Security/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Security/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/customers.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/customers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/employee.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/financing.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/financing.js" afterDir="false" />
@@ -74,7 +72,7 @@
       <workItem from="1579578733411" duration="2083000" />
       <workItem from="1579581284821" duration="2551000" />
       <workItem from="1579588819883" duration="53363000" />
-      <workItem from="1579766752593" duration="7969000" />
+      <workItem from="1579766752593" duration="47145000" />
     </task>
     <task id="LOCAL-00001" summary="menambah fungsi get token untuk login di middleware">
       <created>1579598969652</created>
@@ -109,6 +107,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="menambah fungsi get token untuk login di middleware" />

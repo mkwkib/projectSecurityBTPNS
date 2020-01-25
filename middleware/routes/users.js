@@ -14,23 +14,7 @@ async function authAdmin(req, res, next) {
       if (err) {
         res.status(400).json({
           status: 'Invalid Token',
-          message: 'Token Salah atau Token Telah Berubah'
-        })
-      }
-    })
-  } catch (err) {
-    return next(err)
-  }
-  next();
-}
-async function authCO(req, res, next) {
-  try {
-    let token = req.headers.authorization;
-    jwt.verify(token, process.env.CO, (err) => {
-      if (err) {
-        res.status(400).json({
-          status: 'Invalid Token',
-          message: 'Token Salah atau Token Telah Berubah'
+          message: 'Token Salah atau Telah Kdaluarsa'
         })
       }
     })
@@ -63,7 +47,7 @@ router.post('/register',authAdmin, function(req, res, next) {
     axios.post(loginAPI+'users/register', req.body)
       .then(function (result) {
         res.status(200).json({
-          status: "200 - OK",
+          status: "200",
           message: result.data
         })
       })
