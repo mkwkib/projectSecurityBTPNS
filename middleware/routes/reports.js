@@ -118,40 +118,6 @@ router.get('/by_account/:accountNumber',function (req, res, next) {
       })
     })
 });
-//-----------------------------------------POST REPORT GET BY FINANCING-------------------------------
-router.post('/financing/add', function (req,res, next) {
-  if(req.body.customerId && req.body.plafon && req.body.disbursementDate) {
-    axios.post(financingAPI + 'financingAccont/registration')
-      .then(function (result) {
-        res.status(200).json({
-          status: "200 - OK",
-          message: result.data
-        });
-        if (result.status(200) && result.data.trxId && result.data.accountNo && result.data.accountName && result.data.installmentNo &&
-              result.data.plafon && result.data.postedAmount && result.data.postedDate && result.data.postedBy && result.data.ket) {
-              axios.post(reportAPI + 'v0.0.1/report/insert', result.data)
-                .then(function (dataresult) {
-                  res.status(200).json(dataresult.data)
-                })
-                .catch(function () {
-                  res.status(400).json({
-                    status: "400 - Bad Request",
-                    message: "DATA TIDAK DAPAT DIMASUKKAN"
-                  })
-                })
-            } else res.status(400).json({
-              status: "400 - Bad Request",
-              message: "DATA TIDAK DITEMUKAN"
-            });
-      }).catch(function () {
-      res.status(400).json({
-        status: "400 - Bad Request",
-        message: "TIDAK DAPAT MENERIMA DATA"
-      })
-
-    });
-  }
-});
 //-----------------------------------------GET NASABAH BY CO-------------------------------
 router.get('/customers/:accountNumber',function (req, res, next) {
   axios.get(reportAPI+'v0.0.1/report/customers/'+req.params.accountNumber)
@@ -167,7 +133,7 @@ router.get('/customers/:accountNumber',function (req, res, next) {
 });
 //-----------------------------------------GET NASABAH BY KET-------------------------------
 router.get('/:ket',function (req, res, next) {
-  page1 = 1;
+  page = 1;
   if (req.query.page) {req.query.page}
   axios.get(reportAPI+'v0.0.1/report/ket/'+req.params.ket+'?page='+req.query.page)
     .then(function (result) {

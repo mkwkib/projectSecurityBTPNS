@@ -25,7 +25,7 @@ async function authCO(req, res, next) {
 
 //-----------------------------------------GET LIST ACCOUNT ALL-------------------------------
 router.get('/account/all',function (req, res, next) {
-  axios.get(financingAPI+'financingAccount/list')
+  axios.get(financingAPI+'financing_account/list')
     .then(function (result) {
       res.status(200).json(result.data)
     })
@@ -39,7 +39,7 @@ router.get('/account/all',function (req, res, next) {
 //-----------------------------------------ADD LIST ACCOUNT-------------------------------
 router.post('/account/input',authCO, function (req, res, next) {
   if(req.body.customerId && req.body.plafon && req.body.disbursementDate){
-    axios.post(financingAPI+'financingAccount/registration', req.body)
+    axios.post(financingAPI+'financing_account/registration', req.body)
       .then(function (result) {
         res.status(200).json({
           status: "200 - OK",
@@ -60,7 +60,7 @@ router.post('/account/input',authCO, function (req, res, next) {
 });
 //-----------------------------GET Financing Account By Id---------------------------------
 router.get('/account/:accountNumber',function (req, res, next) {
-  axios.get(financingAPI+'financingAccount/'+req.params.accountNumber)
+  axios.get(financingAPI+'financing_account/'+req.params.accountNumber)
     .then(function (result) {
       res.status(200).json(result.data)
     })
@@ -72,6 +72,18 @@ router.get('/account/:accountNumber',function (req, res, next) {
     })
 });
 //-----------------------------PUT Financing Payment by trxId---------------------------------
+router.put('/schedule/:trxId', function (req, res, next) {
+    axios.put(financingAPI+'financing_schedule/payment/'+req.params.trxId)
+      .then(function (result) {
+        res.status(200).json(result.data)
+      })
+      .catch(function () {
+        res.status(409).json({
+          status: "409 - Conflict",
+          message: "Data yang Anda Masukkan Salah"
+        })
+      })
+});
 
 module.exports = router;
 

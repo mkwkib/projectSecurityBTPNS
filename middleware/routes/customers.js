@@ -43,7 +43,9 @@ router.post('/register', function (req, res, next) {
 });
 //-----------------------------------------GET CUSTOMER-------------------------------
 router.get('/all',function (req, res, next) {
-  axios.get(customerAPI+'customers')
+  page = 0;
+  if (req.query.page) {req.query.page}
+  axios.get(customerAPI+'customers?page='+req.query.page)
     .then(function (result) {
       res.status(200).json(result.data)
     })
@@ -69,7 +71,7 @@ router.get('/:nik',function (req, res, next) {
 });
 //-----------------------------------------UPDATE CUSTOMER BY NIK-------------------------------
 router.put('/edit/:idcustomer', function (req, res, next) {
-  if(req.body.name && req.body.email && req.body.phone && req.body.address){
+  if(req.body.name && req.body.email && req.body.phone && req.body.address && req.body.customer_nik){
     axios.put(customerAPI+'customer/'+req.params.idcustomer, req.body)
       .then(function (result) {
         res.status(200).json(result.data)
@@ -84,5 +86,18 @@ router.put('/edit/:idcustomer', function (req, res, next) {
     status: "400 - Bad Request",
     message: "Tidak Dapat Menghubungi Server"
   })
+});
+//-----------------------------------------GET CUSTOMER BY NIK-------------------------------
+router.get('/:name',function (req, res, next) {
+  axios.get(customerAPI+'customer/name/'+req.params.name)
+    .then(function (result) {
+      res.status(200).json(result.data)
+    })
+    .catch(function () {
+      res.status(400).json({
+        status: "400 - Bad Request",
+        message: "DATA TIDAK DITEMUKAN"
+      })
+    })
 });
 module.exports=router;

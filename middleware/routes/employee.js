@@ -58,7 +58,7 @@ router.post('/register',authAdmin, function(req, res, next) {
   })
 });
 //-------------------------------GET EMPLOYEE BY NIK-------------------------------
-router.get('/:nik',authAdmin,function (req, res, next) {
+router.get('/:nik', function (req, res, next) {
   axios.get(employeeAPI+'employee/'+req.params.nik)
     .then(function (result) {
       res.status(200).json(result.data)
