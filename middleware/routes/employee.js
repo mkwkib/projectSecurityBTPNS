@@ -25,7 +25,9 @@ async function authAdmin(req, res, next) {
 
 //-------------------------------GET ALL EMPLOYEE-------------------------------
 router.get('/all',authAdmin,function (req, res, next) {
-  axios.get(employeeAPI+'employee/')
+  page = 1;
+  if (req.query.page) {req.query.page}
+  axios.get(employeeAPI+'employee/?page='+req.query.page)
     .then(function (result) {
       res.status(200).json(result.data)
     })

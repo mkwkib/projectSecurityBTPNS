@@ -80,9 +80,10 @@ module.exports = {
                 {secret = process.env.CO}
                 var token = jwt.sign({
                   id: users.id,
+                  name: users.name,
                   role_id: users.role_id,
-                  secret : secret.trim()
-                }, secret.trim(),{ expiresIn: '1h' });
+                  nik: users.nik
+                }, secret.trim(),{ expiresIn: '12h' });
                 res.status(200).json({
                   message: "sukses",
                   token: token

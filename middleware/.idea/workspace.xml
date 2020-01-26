@@ -9,8 +9,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/customers.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/customers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/employee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/financing-report.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/financing-report.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/financing.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/financing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/reports.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/reports.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +69,9 @@
       <workItem from="1579578733411" duration="2083000" />
       <workItem from="1579581284821" duration="2551000" />
       <workItem from="1579588819883" duration="53363000" />
-      <workItem from="1579766752593" duration="60560000" />
+      <workItem from="1579766752593" duration="70224000" />
+      <workItem from="1580011934512" duration="1976000" />
+      <workItem from="1580018941625" duration="1029000" />
     </task>
     <task id="LOCAL-00001" summary="menambah fungsi get token untuk login di middleware">
       <created>1579598969652</created>
@@ -106,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579944720645</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="menambah method financing-report">
+      <created>1579965563142</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1579965563142</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,7 +126,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -128,13 +139,14 @@
     <MESSAGE value="menambah .env" />
     <MESSAGE value="menambah routes customers dan employee" />
     <MESSAGE value="menambah method put di middleware" />
-    <option name="LAST_COMMIT_MESSAGE" value="menambah method put di middleware" />
+    <MESSAGE value="menambah method financing-report" />
+    <option name="LAST_COMMIT_MESSAGE" value="menambah method financing-report" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1579944718004">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1579965560777">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1579944718004" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1579965560777" />
     <state width="1323" height="202" key="GridCell.Tab.0.bottom" timestamp="1579962412848">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -151,9 +163,13 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1323" height="202" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1579962412848" />
-    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1579944728011">
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1579965570429">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1579944728011" />
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1579965570429" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1580011660938">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1580011660938" />
   </component>
 </project>

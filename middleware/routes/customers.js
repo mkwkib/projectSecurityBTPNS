@@ -87,7 +87,7 @@ router.put('/edit/:idcustomer', function (req, res, next) {
     message: "Tidak Dapat Menghubungi Server"
   })
 });
-//-----------------------------------------GET CUSTOMER BY NIK-------------------------------
+//-----------------------------------------GET CUSTOMER BY NAME-------------------------------
 router.get('/:name',function (req, res, next) {
   axios.get(customerAPI+'customer/name/'+req.params.name)
     .then(function (result) {

@@ -63,6 +63,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     {});
 
+  users.beforeValidate((users, option) => {
+    users.username = users.username.toLowerCase()
+    return users
+  });
+
   users.associate = function(models) {
     // users.belongsTo(models.roles.role_id, { as: "roles" });
   };

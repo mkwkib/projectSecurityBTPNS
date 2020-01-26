@@ -37,12 +37,12 @@ router.get('/account/all',function (req, res, next) {
     })
 });
 //-----------------------------------------ADD LIST ACCOUNT-------------------------------
-router.post('/account/input',authCO, function (req, res, next) {
+router.post('/account/input', function (req, res, next) {
   if(req.body.customerId && req.body.plafon && req.body.disbursementDate){
     axios.post(financingAPI+'financing_account/registration', req.body)
       .then(function (result) {
-        res.status(200).json({
-          status: "200 - OK",
+        res.status(201).json({
+          status: "201",
           message: result.data
         })
       })
@@ -83,6 +83,32 @@ router.put('/schedule/:trxId', function (req, res, next) {
           message: "Data yang Anda Masukkan Salah"
         })
       })
+});
+//-----------------------------------------GET LIST ACCOUNT BY ACCOUNT NUMBER-------------------------------
+router.get('/account/:accountNo',function (req, res, next) {
+  axios.get(financingAPI+'financing_account/'+req.params.accountNo)
+    .then(function (result) {
+      res.status(200).json(result.data)
+    })
+    .catch(function () {
+      res.status(400).json({
+        status: "400 - Bad Request",
+        message: "Data yang Anda Masukkan Salah"
+      })
+    })
+});
+//-----------------------------------------GET LIST SCHEDULE BY ACCOUNT NUMBER-------------------------------
+router.get('/schedule/:accountId',function (req, res, next) {
+  axios.get(financingAPI+'financing_schedule/'+req.params.accountId)
+    .then(function (result) {
+      res.status(200).json(result.data)
+    })
+    .catch(function () {
+      res.status(400).json({
+        status: "400 - Bad Request",
+        message: "Data yang Anda Masukkan Salah"
+      })
+    })
 });
 
 module.exports = router;

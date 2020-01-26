@@ -17,21 +17,19 @@ router.put('/pay/:trxId', function (req,res, next) {
           itemData = {trxId:null, accountNo: null, accountName: null, installmentNo: null,
                       plafon: null, postedAmount: null, postedDate: null,postedBy:null, ket: null};
           item =result.data.data;
-
             itemDataTemp = itemData;
             itemDataTemp.trxId = item.trxId;
             itemDataTemp.accountNo = item.accountId;
-            itemDataTemp.accountName = item.accountId;
+            itemDataTemp.accountName = req.body.accountName;
             itemDataTemp.installmentNo = item.installmentNo;
             itemDataTemp.plafon = parseFloat(item.principal)*12;
             itemDataTemp.postedAmount = parseFloat(item.principal)+parseFloat(item.profitShare);
             itemDataTemp.postedDate = item.paymentDate;
-            itemDataTemp.postedBy = item.accountId;
+            itemDataTemp.postedBy = req.body.nik;
             itemDataTemp.ket = item.paymentStatement;
             listData.push(itemDataTemp);
 
           axios.post(reportAPI + 'v0.0.1/report/insert', listData)
-          console.log(listData)
             .then(function (dataresult) {
               res.status(200).json(dataresult.data)
             })
