@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="57ed7db8-1181-45c7-aea3-690d08b74ea3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../middleware/.env" beforeDir="false" afterPath="$PROJECT_DIR$/../middleware/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../middleware/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../middleware/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../middleware/routes/financing-report.js" beforeDir="false" afterPath="$PROJECT_DIR$/../middleware/routes/financing-report.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1WatsVQMLW9SHpMNVrII5UYKrdi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.13.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../btpn-day2/contohExpress" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager" selected="Mocha.users.GET /users.will return all user data">
+    <configuration name="users.GET /users" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/test/user-testing.js</test-file>
+      <test-names>
+        <name value="users" />
+        <name value="GET /users" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="users.GET /users.will return all user data" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/test/user-testing.js</test-file>
+      <test-names>
+        <name value="users" />
+        <name value="GET /users" />
+        <name value="will return all user data" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Mocha.users.GET /users.will return all user data" />
+        <item itemvalue="Mocha.users.GET /users" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="57ed7db8-1181-45c7-aea3-690d08b74ea3" name="Default Changelist" comment="" />
+      <created>1579399739933</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579399739933</updated>
+      <workItem from="1579399743228" duration="5101000" />
+      <workItem from="1579405734512" duration="28000" />
+      <workItem from="1579486054470" duration="8953000" />
+      <workItem from="1579580963067" duration="2230000" />
+      <workItem from="1579588835687" duration="36907000" />
+      <workItem from="1579766741449" duration="20564000" />
+      <workItem from="1580011949289" duration="691000" />
+      <workItem from="1580018940976" duration="14213000" />
+    </task>
+    <task id="LOCAL-00001" summary="menambahkan column NIK di database users">
+      <created>1579665136413</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1579665136414</updated>
+    </task>
+    <task id="LOCAL-00002" summary="menambahkan column NIK di database users">
+      <created>1579665390074</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1579665390074</updated>
+    </task>
+    <task id="LOCAL-00003" summary="menambahkan API di middleware untuk financing dan report">
+      <created>1579687227675</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1579687227675</updated>
+    </task>
+    <task id="LOCAL-00004" summary="menambahkan fungsi get Token berdasarkan role dengan expire 1jam">
+      <created>1579774994635</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1579774994635</updated>
+    </task>
+    <task id="LOCAL-00005" summary="menambahkan fungsi get financing account dan financing schedule">
+      <created>1580020902150</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1580020902150</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="menambahkan column NIK di database users" />
+    <MESSAGE value="menambahkan API di middleware untuk financing dan report" />
+    <MESSAGE value="menambahkan fungsi get Token berdasarkan role dengan expire 1jam" />
+    <MESSAGE value="menambahkan fungsi get financing account dan financing schedule" />
+    <option name="LAST_COMMIT_MESSAGE" value="menambahkan fungsi get financing account dan financing schedule" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="444" y="187" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579589172428">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="444" y="187" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1579589172428" />
+    <state x="363" y="120" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580018465186">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="363" y="120" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.768@0.0.1366.768" timestamp="1580018465186" />
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1580020900586">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1580020900586" />
+    <state x="129" y="64" key="DiffContextDialog" timestamp="1579665417765">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="129" y="64" key="DiffContextDialog/0.0.1366.768@0.0.1366.768" timestamp="1579665417765" />
+    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1579403683081">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1579403683081" />
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1579752707832">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1579752707832" />
+    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1579752707832">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1579752707832" />
+    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1579752707832">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1579752707832" />
+    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1579752707832">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1579752707832" />
+    <state x="78" y="0" key="SettingsEditor" timestamp="1580118686951">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="78" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1580118686951" />
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1580020910558">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1580020910558" />
+    <state x="65" y="109" width="1235" height="593" key="new project wizard" timestamp="1579578728020">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="65" y="109" width="1235" height="593" key="new project wizard/0.0.1366.768@0.0.1366.768" timestamp="1579578728020" />
+  </component>
+</project>
